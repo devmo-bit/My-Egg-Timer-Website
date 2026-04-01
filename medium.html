@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Boiled Egg Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Brandon+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container timer-page">
+        <img src="medium boiled egg.png" alt="Medium Boiled Egg" class="timer-image">
+        <h1>Medium Boiled Egg Timer</h1>
+        <img id="done-image" src="../Digital painting watercolor cute eggs in a bowl _ Premium Vector.jpg" alt="Cute Eggs" class="done-image">
+        <div id="timer" class="timer-display">08:00</div>
+        <div class="controls">
+            <button id="start">Start</button>
+            <button id="reset">Reset</button>
+            <button onclick="window.location.href='index.html'">Back</button>
+        </div>
+    </div>
+    <script>
+        let timeLeft = 8 * 60; // 8 minutes in seconds
+        let timerId = null;
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('start');
+        const resetBtn = document.getElementById('reset');
+        const doneImage = document.getElementById('done-image');
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerId) return;
+            timerId = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    timerId = null;
+                    doneImage.style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            timeLeft = 8 * 60;
+            updateDisplay();
+            doneImage.style.display = 'none';
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    </script>
+</body>
+</html>

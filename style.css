@@ -1,0 +1,81 @@
+body {
+    font-family: 'Brandon Grotesque', sans-serif;
+    background-color: #FFFACD; /* Mellow yellow */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.home-image {
+    width: 300px; /* Big but not too big */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 18px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #FFA500;
+}
+
+.timer-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #FFA500;
+}
+
+.done-image {
+    display: none;
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+}
